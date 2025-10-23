@@ -1,0 +1,44 @@
+# Node modules
+node_modules/
+npm-debug.log
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+README.md
+*.md
+
+# Tests
+test/
+tests/
+*.test.js
+*.spec.js
+coverage/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Logs
+logs/
+*.log
+
