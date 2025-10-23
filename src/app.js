@@ -1,7 +1,6 @@
 require("dotenv").config();
 
 const express = require("express");
-const cors = require("cors");
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
 
@@ -18,13 +17,6 @@ const PORT = process.env.PORT || 3001;
 // Helmet para headers de seguridad
 app.use(helmet());
 
-// CORS para permitir requests desde frontend
-app.use(
-  cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:3000",
-    credentials: true,
-  })
-);
 
 // Rate limiting - máximo 100 requests por 15 minutos
 const limiter = rateLimit({
