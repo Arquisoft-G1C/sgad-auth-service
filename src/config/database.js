@@ -130,22 +130,17 @@ async function closeDatabase() {
 async function findUserByEmail(email) {
   const text = `
     SELECT 
-      u.id,
-      u.email,
-      u.password_hash,
-      u.role,
-      u.first_name,
-      u.last_name,
-      u.phone,
-      u.is_active,
-      u.created_at,
-      r.id as referee_id,
-      r.license_number,
-      r.specialties,
-      r.certification_level
-    FROM users u
-    LEFT JOIN referees r ON u.id = r.user_id
-    WHERE u.email = $1 AND u.is_active = true
+      id,
+      email,
+      password_hash,
+      role,
+      first_name,
+      last_name,
+      phone,
+      is_active,
+      created_at
+    FROM users
+    WHERE email = $1 AND is_active = true
   `;
 
   const result = await query(text, [email]);
@@ -157,19 +152,15 @@ async function findUserByEmail(email) {
 async function findUserById(userId) {
   const text = `
     SELECT 
-      u.id,
-      u.email,
-      u.role,
-      u.first_name,
-      u.last_name,
-      u.phone,
-      u.is_active,
-      r.id as referee_id,
-      r.license_number,
-      r.specialties
-    FROM users u
-    LEFT JOIN referees r ON u.id = r.user_id
-    WHERE u.id = $1 AND u.is_active = true
+      id,
+      email,
+      role,
+      first_name,
+      last_name,
+      phone,
+      is_active
+    FROM users
+    WHERE id = $1 AND is_active = true
   `;
 
   const result = await query(text, [userId]);

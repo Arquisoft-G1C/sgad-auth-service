@@ -58,11 +58,7 @@ async function loginUser(email, password) {
       role: user.role,
       firstName: user.first_name,
       lastName: user.last_name,
-      phone: user.phone,
-      refereeId: user.referee_id,
-      licenseNumber: user.license_number,
-      specialties: user.specialties,
-      certificationLevel: user.certification_level
+      phone: user.phone
     };
     
     return {
@@ -116,10 +112,7 @@ async function verifyToken(token) {
       role: user.role,
       firstName: user.first_name,
       lastName: user.last_name,
-      phone: user.phone,
-      refereeId: user.referee_id,
-      licenseNumber: user.license_number,
-      specialties: user.specialties
+      phone: user.phone
     };
     
     return {
@@ -162,7 +155,6 @@ function generateJWT(user) {
     userId: user.id,
     email: user.email,
     role: user.role,
-    refereeId: user.referee_id,
     iat: Math.floor(Date.now() / 1000)
   };
   
