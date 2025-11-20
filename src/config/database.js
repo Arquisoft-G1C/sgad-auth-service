@@ -7,7 +7,7 @@ const { Pool } = require("pg");
 
 const poolConfig = {
   user: process.env.POSTGRES_USER || "sgad_user",
-  host: process.env.POSTGRES_HOST || "localhost",
+  host: process.env.POSTGRES_HOST || "sgad-users-db",
   database: process.env.POSTGRES_DB || "sgad_db",
   password: process.env.POSTGRES_PASSWORD,
   port: process.env.POSTGRES_PORT || 5432,
